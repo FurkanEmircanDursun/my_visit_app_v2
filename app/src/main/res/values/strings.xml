@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">my_visit_app</string>
+    <string name="sign_up">Sign-up</string>
+    <string name="sign_in">Sign-in</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="login">Login</string>
+    <string name="sign_out">Sign-Out</string>
+</resources>

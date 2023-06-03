@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51478780336",
+    "project_id": "visit-app-d00b6",
+    "storage_bucket": "visit-app-d00b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51478780336:android:ddd60f421bed51ed011e75",
+        "android_client_info": {
+          "package_name": "com.example.my_visit_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51478780336-nmgddktfgh0t1bkblb67fvdr37a7u313.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEw_yb8ImClbbSOtlmnFHn3yCVK4FRJbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51478780336-nmgddktfgh0t1bkblb67fvdr37a7u313.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
