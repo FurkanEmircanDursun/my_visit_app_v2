@@ -46,12 +46,12 @@ class VisitActivity : AppCompatActivity() {
             finish()
 
         }
-        if (titleEditText.text.toString().isEmpty() || cityEditText.text.toString()
-                .isEmpty() || descEditText.text.toString().isEmpty()
-        ) {
+
 
             addDataButton.setOnClickListener {
-
+                if (titleEditText.text.toString().isNotEmpty() && cityEditText.text.toString()
+                        .isNotEmpty() && descEditText.text.toString().isNotEmpty()
+                ) {
                 val data = hashMapOf(
                     "title" to titleEditText.text.toString(),
                     "city" to cityEditText.text.toString(),
@@ -94,14 +94,18 @@ class VisitActivity : AppCompatActivity() {
                 val title = document.getString("title") ?: ""
                 val city = document.getString("city") ?: ""
                 val desc = document.getString("description") ?: ""
+                val uid=document.id
+                Log.d("uuid",uid)
 
-                val visit = Visit(title, city, desc)
+                val visit = Visit(title, city, desc,uid)
                 visitList.add(visit)
             }
 
             // RecyclerView ile dataList'i kullanarak verileri gösterin
             val adapter = MyRecyclerViewAdapter(visitList)
             myRecyclerView.adapter = adapter
+
+
         }
     }
 }

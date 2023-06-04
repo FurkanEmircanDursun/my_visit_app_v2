@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:id="@+id/linearLayout"
     android:background="#D54141"
     android:orientation="vertical">
 

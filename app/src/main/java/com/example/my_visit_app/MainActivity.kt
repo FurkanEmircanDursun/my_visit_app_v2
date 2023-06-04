@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
               val password = passwordEditText.text.toString()
 
 
-          if (mail.isNotEmpty()||password.isNotEmpty()){
+          if (mail.isNotEmpty()&&password.isNotEmpty()){
 
               firebaseAuth.createUserWithEmailAndPassword(mail.toString(), password.toString())
                   .addOnSuccessListener {

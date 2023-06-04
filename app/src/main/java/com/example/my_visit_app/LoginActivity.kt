@@ -36,9 +36,10 @@ class LoginActivity : AppCompatActivity() {
         startActivity(Intent(this@LoginActivity,ResetPasswordActivity::class.java))
         }
 
-     if(mailEditText.text.toString().isNotEmpty()||passwordEditText.text.toString().isNotEmpty()){
+
 
          loginButton.setOnClickListener {
+             if(mailEditText.text.toString().isNotEmpty()&&passwordEditText.text.toString().isNotEmpty()){
              val mail = mailEditText.text
              val password = passwordEditText.text
              firebaseAuth.signInWithEmailAndPassword(mail.toString(), password.toString())

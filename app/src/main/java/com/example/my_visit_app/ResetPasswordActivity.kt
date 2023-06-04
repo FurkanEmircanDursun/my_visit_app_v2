@@ -22,12 +22,12 @@ class ResetPasswordActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
 
-        if (resetPasswordMailEditText.text.toString().isNotEmpty()) {
+
 
 
             resetPasswordButton.setOnClickListener() {
 
-
+                if (resetPasswordMailEditText.text.toString().isNotEmpty()) {
                 firebaseAuth.sendPasswordResetEmail(resetPasswordMailEditText.text.toString())
                     .addOnSuccessListener {
 
