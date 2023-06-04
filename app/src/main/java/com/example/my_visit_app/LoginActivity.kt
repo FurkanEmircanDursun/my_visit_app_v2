@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
 
-        mailEditText = findViewById(R.id.mailEditText)
+        mailEditText = findViewById(R.id.resetPasswordMailEditText)
         loginButton = findViewById(R.id.loginButton_2)
         passwordEditText = findViewById(R.id.passwordEditText)
         forgetPasswordTextView = findViewById(R.id.forgetPasswordTextView)
@@ -31,7 +31,10 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
+        forgetPasswordTextView.setOnClickListener {
 
+        startActivity(Intent(this@LoginActivity,ResetPasswordActivity::class.java))
+        }
 
         loginButton.setOnClickListener {
             val mail = mailEditText.text

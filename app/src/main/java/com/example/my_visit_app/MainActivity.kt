@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        mailEditText = findViewById(R.id.mailEditText)
+        mailEditText = findViewById(R.id.resetPasswordMailEditText)
         loginButton = findViewById(R.id.loginButton)
         passwordEditText = findViewById(R.id.passwordEditText)
 
@@ -36,48 +36,49 @@ class MainActivity : AppCompatActivity() {
 
         registerButton = findViewById(R.id.registerButton)
 
-        registerButton.setOnClickListener {
+      if (mailEditText.text.isNotEmpty()&&passwordEditText.text.isNotEmpty()){
 
-            val mail = mailEditText.text
-            val password = passwordEditText.text
+          registerButton.setOnClickListener {
 
-
-            firebaseAuth.createUserWithEmailAndPassword(mail.toString(), password.toString())
-                .addOnSuccessListener {
-
-                    Log.d("firebase auth state", "create User state is successful ")
-
-                    val user = hashMapOf(
-                        "E-mail" to mail.toString(),
-                        "Password" to password.toString(),
-
-                        )
+              val mail = mailEditText.text
+              val password = passwordEditText.text
 
 
-                    firestore.collection("Users").document(firebaseAuth.currentUser!!.uid).set(user)
-                        .addOnSuccessListener {
-                            Log.d("Firestore state", "firestore state is successful")
+              firebaseAuth.createUserWithEmailAndPassword(mail.toString(), password.toString())
+                  .addOnSuccessListener {
 
-                            startActivity(Intent(this@MainActivity, VisitActivity::class.java))
-                        }.addOnFailureListener {
+                      Log.d("firebase auth state", "create User state is successful ")
 
-                            Log.d(
-                                "Firestore state",
-                                "firestore state is not successful because : $it"
-                            )
+                      val user = hashMapOf(
+                          "E-mail" to mail.toString(),
+                          "Password" to password.toString(),
 
-                        }
+                          )
 
-                }.addOnFailureListener {
 
-                    Toast.makeText(applicationContext, "${it.message}", Toast.LENGTH_LONG).show()
-                    Log.d(
-                        "firebase auth state",
-                        "create User state is not successful ${it.message} "
-                    )
-                }
+                      firestore.collection("Users").document(firebaseAuth.currentUser!!.uid).set(user)
+                          .addOnSuccessListener {
+                              Log.d("Firestore state", "firestore state is successful")
 
-        }
+                              startActivity(Intent(this@MainActivity, VisitActivity::class.java))
+                          }.addOnFailureListener {
+
+                              Log.d(
+                                  "Firestore state", "firestore state is not successful because : $it"
+                              )
+
+                          }
+
+                  }.addOnFailureListener {
+
+                      Toast.makeText(applicationContext, "${it.message}", Toast.LENGTH_LONG).show()
+                      Log.d(
+                          "firebase auth state", "create User state is not successful ${it.message} "
+                      )
+                  }
+
+          }
+      }
 
         loginButton.setOnClickListener {
 
