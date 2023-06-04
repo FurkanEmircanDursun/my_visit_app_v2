@@ -24,7 +24,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/passwordEditText"
+        android:id="@+id/loginPasswordEditText"
 
         android:layout_width="match_parent"
 

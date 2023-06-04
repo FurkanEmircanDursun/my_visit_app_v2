@@ -22,32 +22,35 @@ class ResetPasswordActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
 
+        if (resetPasswordMailEditText.text.toString().isNotEmpty()) {
 
-        resetPasswordButton.setOnClickListener() {
+
+            resetPasswordButton.setOnClickListener() {
 
 
-            firebaseAuth.sendPasswordResetEmail(resetPasswordMailEditText.text.toString())
-                .addOnSuccessListener {
+                firebaseAuth.sendPasswordResetEmail(resetPasswordMailEditText.text.toString())
+                    .addOnSuccessListener {
 
-                    Log.d("Reset password state ", "is successful")
+                        Log.d("Reset password state ", "is successful")
 
-                    Toast.makeText(
-                        this@ResetPasswordActivity,
-                        "The Password reset mail has been sent",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        Toast.makeText(
+                            this@ResetPasswordActivity,
+                            "The Password reset mail has been sent",
+                            Toast.LENGTH_LONG
+                        ).show()
 
-                }.addOnFailureListener {
+                    }.addOnFailureListener {
 
-                    Toast.makeText(
-                        this@ResetPasswordActivity,
-                        "Error: ${it.message.toString()}",
-                        Toast.LENGTH_LONG
-                    ).show()
+                        Toast.makeText(
+                            this@ResetPasswordActivity,
+                            "Error: ${it.message.toString()}",
+                            Toast.LENGTH_LONG
+                        ).show()
 
-                    Log.d("Reset password state", " is not successful" + it.message.toString())
-                }
+                        Log.d("Reset password state", " is not successful" + it.message.toString())
+                    }
 
+            }
         }
     }
 }

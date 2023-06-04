@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         mailEditText = findViewById(R.id.resetPasswordMailEditText)
         loginButton = findViewById(R.id.loginButton_2)
-        passwordEditText = findViewById(R.id.passwordEditText)
+        passwordEditText = findViewById(R.id.loginPasswordEditText)
         forgetPasswordTextView = findViewById(R.id.forgetPasswordTextView)
 
         firebaseAuth = FirebaseAuth.getInstance()
@@ -36,22 +36,25 @@ class LoginActivity : AppCompatActivity() {
         startActivity(Intent(this@LoginActivity,ResetPasswordActivity::class.java))
         }
 
-        loginButton.setOnClickListener {
-            val mail = mailEditText.text
-            val password = passwordEditText.text
-            firebaseAuth.signInWithEmailAndPassword(mail.toString(), password.toString())
-                .addOnSuccessListener {
+     if(mailEditText.text.toString().isNotEmpty()||passwordEditText.text.toString().isNotEmpty()){
 
-                    Log.d("firebase auth state", "sign In state is successful ")
-                    startActivity(Intent(this@LoginActivity, VisitActivity::class.java))
-                    finish()
-                }.addOnFailureListener {
+         loginButton.setOnClickListener {
+             val mail = mailEditText.text
+             val password = passwordEditText.text
+             firebaseAuth.signInWithEmailAndPassword(mail.toString(), password.toString())
+                 .addOnSuccessListener {
 
-                    Toast.makeText(applicationContext, "${it.message}", Toast.LENGTH_LONG).show()
-                    Log.d("firebase auth state", "sign In state is not successful ${it.message} ")
-                }
+                     Log.d("firebase auth state", "sign In state is successful ")
+                     startActivity(Intent(this@LoginActivity, VisitActivity::class.java))
+                     finish()
+                 }.addOnFailureListener {
 
-        }
+                     Toast.makeText(applicationContext, "${it.message}", Toast.LENGTH_LONG).show()
+                     Log.d("firebase auth state", "sign In state is not successful ${it.message} ")
+                 }
+
+         }
+     }
 
 
     }

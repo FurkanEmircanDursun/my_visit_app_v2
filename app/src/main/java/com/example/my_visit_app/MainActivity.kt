@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        mailEditText = findViewById(R.id.resetPasswordMailEditText)
+        mailEditText = findViewById(R.id.mailEditText)
         loginButton = findViewById(R.id.loginButton)
         passwordEditText = findViewById(R.id.passwordEditText)
-
+        registerButton = findViewById(R.id.registerButton)
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
@@ -34,15 +34,17 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        registerButton = findViewById(R.id.registerButton)
 
-      if (mailEditText.text.isNotEmpty()&&passwordEditText.text.isNotEmpty()){
+
+
 
           registerButton.setOnClickListener {
 
-              val mail = mailEditText.text
-              val password = passwordEditText.text
+              val mail = mailEditText.text.toString()
+              val password = passwordEditText.text.toString()
 
+
+          if (mail.isNotEmpty()||password.isNotEmpty()){
 
               firebaseAuth.createUserWithEmailAndPassword(mail.toString(), password.toString())
                   .addOnSuccessListener {
@@ -76,9 +78,10 @@ class MainActivity : AppCompatActivity() {
                           "firebase auth state", "create User state is not successful ${it.message} "
                       )
                   }
+          }
 
           }
-      }
+
 
         loginButton.setOnClickListener {
 
