@@ -20,22 +20,6 @@ class MyRecyclerViewAdapter(private val dataList: ArrayList<Visit>) :
     RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder>() {
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var firestore: FirebaseFirestore
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent, false)
-        return ViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data = dataList[position]
-        holder.bind(data)
-        holder.currentItem = data
-    }
-
-    override fun getItemCount(): Int {
-        return dataList.size
-    }
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val title: TextView = itemView.findViewById(R.id.itemTitleTextView)
@@ -65,12 +49,12 @@ class MyRecyclerViewAdapter(private val dataList: ArrayList<Visit>) :
                                 // Silme işlemi başarılı olduğunda yapılacak işlemler
                             }
                             .addOnFailureListener { e ->
-                                // Silme işlemi başarısız olduğunda yapılacak işlemler
+
                             }
                     }
                 }
                 alertDialogBuilder.setNegativeButton("Hayır") { dialog, which ->
-                    // Silme işleminden vazgeç veya herhangi başka bir işlem yap
+
                 }
 
                 val alertDialog = alertDialogBuilder.create()
@@ -90,4 +74,21 @@ class MyRecyclerViewAdapter(private val dataList: ArrayList<Visit>) :
             layout.setBackgroundColor(color)
         }
     }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_list, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val data = dataList[position]
+        holder.bind(data)
+        holder.currentItem = data
+
+    }
+
+    override fun getItemCount(): Int {
+        return dataList.size
+    }
+
+
 }
