@@ -16,11 +16,11 @@ Firebase Firestore
 ScreenShots
 
 # REGİSTER PAGE
-![image](https://github.com/FurkanEmircanDursun/my_visit_app_v2/assets/63562726/48845c24-b9ee-4cc6-9199-e867a2dbd62b)
+![image](https://github.com/FurkanEmircanDursun/my_visit_app_v2/assets/63562726/910802c9-b53b-40ca-90d4-82dc8cd6a647)
 # LOGİN PAGE
-![ezgif-4-05da753b10](https://github.com/FurkanEmircanDursun/furkan_emircan_dursun_vize2/assets/63562726/-57b7-40ea-b206-457868f07264)
+![image](https://github.com/FurkanEmircanDursun/my_visit_app_v2/assets/63562726/b75392bb-1682-4ff1-99cf-535607f16d51)
 # FORGET PASSWORD PAGE
-![ezgif-4-05da753b10](https://github.com/FurkanEmircanDursun/furkan_emircan_dursun_vize2/assets/63562726/-57b7-40ea-b206-457868f07264)
+![image](https://github.com/FurkanEmircanDursun/my_visit_app_v2/assets/63562726/559aee1c-d2f2-49a8-967c-f5342a53ae9f)
 # VISIT PAGE
 ![ezgif-4-05da753b10](https://github.com/FurkanEmircanDursun/furkan_emircan_dursun_vize2/assets/63562726/-57b7-40ea-b206-457868f07264)
 # Firebase Query results 
