@@ -13,8 +13,6 @@ Welcome to My Visit App v2! This is a web application where users can sign up, c
 ### Forgot Password Page
 ![Forgot Password Page](https://github.com/FurkanEmircanDursun/my_visit_app_v2/assets/63562726/559aee1c-d2f2-49a8-967c-f5342a53ae9f)
 
-### Visit Page
-![Visit Page](https://github.com/FurkanEmircanDursun/furkan_emircan_dursun_vize2/assets/63562726/-57b7-40ea-b206-457868f07264)
 
 ### Firebase Query Results
 ![Firebase Query Results 1](https://github.com/FurkanEmircanDursun/my_visit_app_v2/assets/63562726/9de932bf-383a-4698-9cc3-b05191d3ca8a)
